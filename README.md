@@ -85,7 +85,7 @@ Audio-Based-Traffic-Light-System/
 ├── logs/
 │   └── traffic_log.json
 │
-└── LICENSE
+
 ```
 
 ### File Description
