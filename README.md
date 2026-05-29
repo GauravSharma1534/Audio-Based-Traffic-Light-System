@@ -8,118 +8,203 @@ minor project, sem 3
 
 ---
 
-## what is this
+#  Audio-Based Traffic Light System for Visually Impaired Pedestrians
 
-normal traffic lights dont work for blind people — they only give visual info.
+An intelligent and cost-effective smart traffic assistance system designed to help visually impaired pedestrians safely cross roads using audio-based traffic signal alerts.
 
-this project adds audio alerts at road crossings. a sensor detects when someone is standing there and plays a sound based on signal color:
-
-- **green** → fast high-pitched beep (880hz) = walk  
-- **yellow** → medium beep (550hz) = signal about to change  
-- **red** → slow low-pitched beep (330hz) = don't cross
-
-sensor detects if someone is at the crossing and plays the right sound.  
-currently runs in simulation mode. built to deploy on raspberry pi later.
+This project simulates an Accessible Pedestrian Signal (APS) system that converts traditional visual traffic light information into audio cues. The system detects the presence of pedestrians at a crossing and generates different sound patterns based on the current traffic signal state.
 
 ---
 
-## files
+##  Problem Statement
 
-```
-traffic_light_system.py   ← main file, run this
-sensor.py                 ← proximity sensor (simulated / real GPIO)
-audio_engine.py           ← sound generation using numpy
-config.py                 ← all settings here
-test_all.py               ← run tests
-requirements.txt          ← dependencies
-```
+Traditional traffic lights rely heavily on visual indicators, making them difficult or impossible for visually impaired individuals to use safely.
+
+Commercial Accessible Pedestrian Signal (APS) systems exist, but they are often expensive and difficult to deploy in developing regions.
+
+This project provides a low-cost alternative using sensors, audio feedback, and Raspberry Pi hardware.
 
 ---
 
-## how to run
+##  Objectives
+
+* Assist visually impaired pedestrians at road crossings.
+* Convert traffic signal states into distinct audio signals.
+* Detect pedestrian presence automatically.
+* Reduce crossing uncertainty and waiting-time errors.
+* Provide a scalable and affordable APS solution.
+
+---
+
+##  Signal Audio Mapping
+
+| Traffic Light | Audio Signal           | Frequency | Meaning              |
+| ------------- | ---------------------- | --------- | -------------------- |
+| 🟢 Green      | Fast High-Pitched Beep | 880 Hz    | Safe to Walk         |
+| 🟡 Yellow     | Medium Beep            | 550 Hz    | Signal Changing Soon |
+| 🔴 Red        | Slow Low-Pitched Beep  | 330 Hz    | Do Not Cross         |
+
+---
+
+## ⚙️ System Architecture
+
+1. Traffic signal state is generated.
+2. Sensor detects pedestrian presence.
+3. System determines the current signal color.
+4. Corresponding audio tone is generated.
+5. Audio alert is played through speakers.
+6. Events are logged for analysis.
+
+---
+
+##  Project Structure
+
+```text
+Audio-Based-Traffic-Light-System/
+│
+├── traffic_light_system.py
+├── sensor.py
+├── audio_engine.py
+├── config.py
+├── test_all.py
+├── requirements.txt
+├── traffic_log.json
+└── README.md
+```
+
+### File Description
+
+| File                    | Purpose                     |
+| ----------------------- | --------------------------- |
+| traffic_light_system.py | Main execution file         |
+| sensor.py               | Pedestrian detection module |
+| audio_engine.py         | Audio waveform generation   |
+| config.py               | Centralized configuration   |
+| test_all.py             | Automated testing           |
+| requirements.txt        | Python dependencies         |
+
+---
+
+##  Technologies Used
+
+* Python 3
+* NumPy
+* Threading
+* JSON Logging
+* SoundDevice
+* Raspberry Pi GPIO
+* HC-SR04 Ultrasonic Sensor
+
+---
+
+##  Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/GauravSharma1534/Audio-Based-Traffic-Light-System.git
+cd Audio-Based-Traffic-Light-System
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Run the project:
+
+```bash
 python traffic_light_system.py
 ```
 
-press `ctrl+c` to stop early
+Stop execution anytime using:
 
-run tests:
+```bash
+CTRL + C
+```
+
+---
+
+##  Testing
+
+Run automated tests:
+
 ```bash
 python test_all.py
-# should print: done. 3/3 passed
+```
+
+Expected Output:
+
+```text
+Done. 3/3 Tests Passed
 ```
 
 ---
 
-## sample output
+##  Sample Output
 
-```
+```text
 ==============================================
-  audio traffic light system
-  gaurav sharma  |  23bda70050
-  chandigarh university  |  2024
-==============================================
-
-running for 30s ...
-
-  [North]  GREEN  (30s)
-    [sound] WALK  North  (880hz fast)
-  [South]  GREEN  (30s)
-  [East]   RED    (20s)
-    [sound] STOP  East   (330hz slow)
-  [West]   RED    (20s)
-    ...
-
-==============================================
-  stats
-==============================================
-  North   crossings= 33  avg_wait=14.7s  cycles=1
-  South   crossings= 40  avg_wait=13.8s  cycles=1
-  East    crossings= 16  avg_wait= 6.3s  cycles=1
-  West    crossings= 18  avg_wait= 5.5s  cycles=1
+Audio Traffic Light System
+Gaurav Sharma | Chandigarh University
 ==============================================
 
-log -> traffic_log.json
-done.
+[North] GREEN (30s)
+  [SOUND] WALK (880Hz)
+
+[East] RED (20s)
+  [SOUND] STOP (330Hz)
+
+Log Saved → traffic_log.json
 ```
 
 ---
 
-## results
+##  Performance Results
 
-- pedestrian wait-time errors down by ~85%
-- sensor to audio response under 500ms
-- all 4 directions run at same time (threading)
-- 99%+ uptime in simulation
-
----
-
-## raspberry pi deployment
-
-the `sensor.py` and `audio_engine.py` files have GPIO/sounddevice code commented out.
-
-to run on real hardware:
-1. uncomment GPIO sections in `sensor.py`
-2. uncomment `sounddevice` lines in `audio_engine.py`
-3. connect HC-SR04 sensors to pins in `config.py`
-4. connect speaker to audio jack
-
-hardware cost per crossing: ~₹5000  
-(vs ₹10 lakh+ for professional APS systems)
+| Metric                        | Result                   |
+| ----------------------------- | ------------------------ |
+| Pedestrian Wait-Time Errors   | Reduced by ~85%          |
+| Sensor-to-Audio Response Time | < 500 ms                 |
+| System Uptime                 | > 99%                    |
+| Concurrent Directions         | 4-way Parallel Execution |
 
 ---
 
-## tech stack
+##  Raspberry Pi Deployment
 
-- Python 3
-- numpy (audio waveforms)
-- threading (4 directions in parallel)
-- sounddevice (speaker output — for hardware)
-- json (event logging)
-- RPi.GPIO (Raspberry Pi GPIO — for hardware)
+The project is currently running in simulation mode.
+
+For real-world deployment:
+
+1. Uncomment GPIO code in `sensor.py`
+2. Uncomment audio playback code in `audio_engine.py`
+3. Connect HC-SR04 sensors
+4. Attach external speaker
+5. Run on Raspberry Pi
 
 ---
 
-open to suggestions and pull requests!
+##  Cost Comparison
+
+| Solution               | Approximate Cost |
+| ---------------------- | ---------------- |
+| Commercial APS Systems | ₹10,00,000+      |
+| This Proposed System   | ~₹5,000          |
+
+Potential cost reduction: **99%+**
+
+---
+
+##  Future Enhancements
+
+* AI-based pedestrian prediction
+* Voice guidance in multiple languages
+* IoT cloud monitoring dashboard
+* Mobile application integration
+* Emergency vehicle prioritization
+* Solar-powered deployment
+
+---
+
