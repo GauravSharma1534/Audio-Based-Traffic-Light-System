@@ -46,7 +46,7 @@ This project provides a low-cost alternative using sensors, audio feedback, and 
 
 ---
 
-## ⚙️ System Architecture
+##  System Architecture
 
 1. Traffic signal state is generated.
 2. Sensor detects pedestrian presence.
