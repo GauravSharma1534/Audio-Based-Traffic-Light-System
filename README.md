@@ -62,14 +62,30 @@ This project provides a low-cost alternative using sensors, audio feedback, and 
 ```text
 Audio-Based-Traffic-Light-System/
 │
-├── traffic_light_system.py
-├── sensor.py
-├── audio_engine.py
-├── config.py
-├── test_all.py
+├── README.md
 ├── requirements.txt
-├── traffic_log.json
-└── README.md
+├── traffic_light_system.py
+├── config.py
+│
+├── src/
+│   ├── audio_engine.py
+│   └── sensor.py
+│
+├── tests/
+│   └── test_all.py
+│
+├── docs/
+│   ├── Traffic_Report_Gaurav_v2.pdf
+│   └── Traffic_PPT_Gaurav_v2.pptx
+│
+├── assets/
+│   ├── output_screenshot.png
+│   └── traffic_system_demo.mp4
+│
+├── logs/
+│   └── traffic_log.json
+│
+└── LICENSE
 ```
 
 ### File Description
