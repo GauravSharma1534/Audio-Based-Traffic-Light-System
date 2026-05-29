@@ -1,4 +1,4 @@
-# audio-based traffic light system
+# Audio-based traffic light system
 
 **Gaurav Sharma | 23BDA70050 | Chandigarh University | 2024**
 
