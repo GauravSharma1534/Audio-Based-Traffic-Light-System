@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2026-05-28T20:28:22.772762",
+    "event": "CYCLE_START",
+    "direction": "North",
+    "signal_state": "GREEN"
+  },
+  {
+    "timestamp": "2026-05-28T20:28:22.773903",
+    "event": "CYCLE_START",
+    "direction": "South",
+    "signal_state": "GREEN"
+  },
+  {
+    "timestamp": "2026-05-28T20:28:22.774722",
+    "event": "CYCLE_START",
+    "direction": "East",
+    "signal_state": "RED"
+  },
+  {
+    "timestamp": "2026-05-28T20:28:22.775192",
+    "event": "CYCLE_START",
+    "direction": "West",
+    "signal_state": "RED"
+  },
+  {
+    "timestamp": "2026-05-28T20:28:42.791899",
+    "event": "CYCLE_START",
+    "direction": "East",
+    "signal_state": "GREEN"
+  },
+  {
+    "timestamp": "2026-05-28T20:28:42.795094",
+    "event": "CYCLE_START",
+    "direction": "West",
+    "signal_state": "GREEN"
+  }
+]
