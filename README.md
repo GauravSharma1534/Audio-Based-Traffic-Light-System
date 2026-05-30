@@ -1,12 +1,5 @@
 # Audio-based traffic light system
 
-**Gaurav Sharma | 23BDA70050 | Chandigarh University | 2024**
-
-🔗 **GitHub:** https://github.com/GauravSharma1534/Audio-Based-Traffic-Light-System
-
-minor project, sem 3
-
----
 
 #  Audio-Based Traffic Light System for Visually Impaired Pedestrians
 
@@ -141,6 +134,99 @@ CTRL + C
 ```
 
 ---
+#  Live Demo & Repository
+
+###  Live Web Demo
+
+Experience the Audio-Based Traffic Light System directly in your browser:
+
+👉 **Live Demo:**
+https://traffic-system-light-gaurav.netlify.app/
+
+---
+
+### 📂 GitHub Repository
+
+View complete source code, project report, presentation, screenshots, demo video, and implementation details:
+
+👉 **GitHub Repository:**
+https://github.com/GauravSharma1534/Audio-Based-Traffic-Light-System
+
+---
+
+### 🎬 Project Demonstration
+
+The repository includes:
+
+* Complete System Demonstration Video
+* Traffic Signal Simulation
+* Audio Alert Demonstration
+* Sensor Detection Workflow
+* Accessibility Features Showcase
+
+---
+
+###  Project Highlights
+
+✅ Accessibility-Focused Smart Traffic System
+
+✅ Audio-Based Guidance for Visually Impaired Pedestrians
+
+✅ Real-Time Pedestrian Detection
+
+✅ Multi-Threaded Traffic Signal Simulation
+
+✅ Raspberry Pi Deployment Ready
+
+✅ Low-Cost Alternative to Commercial APS Systems
+
+✅ Sensor-to-Audio Response < 500ms
+
+✅ 99%+ Simulation Uptime
+
+✅ Event Logging and Performance Tracking
+
+---
+
+###  Performance Summary
+
+| Metric                        | Result   |
+| ----------------------------- | -------- |
+| Wait-Time Error Reduction     | ~85%     |
+| Audio Response Time           | < 500 ms |
+| Concurrent Traffic Directions | 4        |
+| System Uptime                 | > 99%    |
+| Estimated Deployment Cost     | ~₹5,000  |
+
+---
+
+###  Audio Signal Mapping
+
+| Signal    | Frequency | Action  |
+| --------- | --------- | ------- |
+| 🟢 Green  | 880 Hz    | Walk    |
+| 🟡 Yellow | 550 Hz    | Prepare |
+| 🔴 Red    | 330 Hz    | Stop    |
+
+---
+
+###  Quick Access
+
+| Resource          | Link                                                                 |
+| ----------------- | -------------------------------------------------------------------- |
+| Live Demo         | https://traffic-system-light-gaurav.netlify.app/                     |
+| GitHub Repository | https://github.com/GauravSharma1534/Audio-Based-Traffic-Light-System |
+| Project Report    | Available in Repository                                              |
+| Presentation      | Available in Repository                                              |
+| Screenshots       | Available in Repository                                              |
+| Demo Video        | Available in Repository                                              |
+
+---
+
+###  Smart City Impact
+
+This project demonstrates how affordable embedded systems and AI-assisted accessibility solutions can improve road safety and support inclusive urban infrastructure for visually impaired pedestrians.
+
 
 ##  Testing
 
