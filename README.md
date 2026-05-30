@@ -154,7 +154,7 @@ https://github.com/GauravSharma1534/Audio-Based-Traffic-Light-System
 
 ---
 
-### 🎬 Project Demonstration
+###  Project Demonstration
 
 The repository includes:
 
